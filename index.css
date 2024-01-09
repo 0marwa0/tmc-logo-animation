@@ -1,14 +1,15 @@
 #main {
   /* display: flex;*/
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 3fr 1fr;
   height: 500px;
   margin: 0;
-
+  border: 2px solid transparent;
   font-family: "Courier New";
+
   font-weight: 300;
   width: 100%;
 }
@@ -51,9 +52,6 @@
 
 .item-container {
   display: flex;
-
-  align-items: center;
-  /* margin: 0 30px; */
   margin-inline: auto;
 }
 
@@ -453,7 +451,7 @@
   animation-name: expandAndShrink12;
   transform: rotate(330deg) translate(25px) rotate(-330deg);
 }
-/* start of descktop screen  */
+/* start of descktop screen style for the small circles expand and srhink  */
 @keyframes expandAndShrink1 {
   0% {
     opacity: 1;
@@ -729,22 +727,17 @@ div.slide-left {
     0% {
       font-size: 50px;
       opacity: 0;
-      /*       width:60px; */
     }
     10% {
       font-size: 180px;
-      /*       width:60px; */
+
       opacity: 1;
     }
     100% {
       font-size: 70px;
       opacity: 1;
-      /*        width:40px; */
     }
   }
-  /* .m-t {
-    margin-top: -600px;
-  } */
 }
 @media screen and (max-width: 900px) {
   #main {
@@ -753,7 +746,6 @@ div.slide-left {
     margin-top: -50px;
   }
 
-  /* start of descktop screen  */
   @keyframes expandAndShrink1 {
     0% {
       opacity: 1;
@@ -977,8 +969,6 @@ div.slide-left {
         rotate(-330deg) scale(var(--circelScale3-lg));
     }
   }
-
-  /* end of descktop screen */
 }
 @media screen and (max-width: 500px) {
   #main {
@@ -986,9 +976,6 @@ div.slide-left {
     transition: all 0.5s ease-in;
     margin-top: -80px;
   }
-  /* .m-t {
-    margin-top: -100px;
-  } */
 }
 @media screen and (max-width: 390px) {
   #main {
@@ -1000,9 +987,6 @@ div.slide-left {
   .item-container {
     margin: 0 30px;
   }
-  /* .m-t {
-    margin-top: -50px;
-  } */
 }
 @media screen and (max-width: 290px) {
   #main {
@@ -1010,13 +994,11 @@ div.slide-left {
     transition: all 0.4s ease-in;
     margin-top: -155px;
   }
-  /* .m-t {
-    margin-top: -20px;
-  } */
 }
-@media (orientation: landscape) {
+@media only screen and (max-device-width: 1000px) and (orientation: landscape) {
   #main {
     height: 200px;
+    border: 2px solid red;
   }
   @keyframes text-grow {
     0% {

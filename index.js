@@ -1,9 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   function generateDrops() {
-    // Get the div with id "drops"
     const dropsDiv = document.getElementById("drops");
-
-    // Create and append 14 div elements with the specified classes
     for (let i = 1; i <= 14; i++) {
       const drop = document.createElement("div");
       drop.className = "drop drop" + i;
@@ -12,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   generateDrops();
   function createLetterElement(text, num) {
-    // Create the main container
     const letterContainer = document.createElement("div");
     letterContainer.className = "letter hideLetter";
     if (num === 12) {
@@ -20,11 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       letterContainer.className = "letter hideLetter";
     }
-    // Create the text content container
     const textContentContainer = document.createElement("div");
     textContentContainer.className = `text-content t${num}`;
-
-    // Create the letter background container
     const letterBgContainer = document.createElement("div");
     letterBgContainer.className = `letter-bg-${num}`;
     if (num === 12) {
@@ -35,29 +28,16 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       letterBgContainer.textContent = text;
     }
-
-    // letterBgContainer.textContent = text;
-
-    // Append letter background container to text content container
     textContentContainer.appendChild(letterBgContainer);
-
-    // Append text content container to main container
     letterContainer.appendChild(textContentContainer);
-
-    // Create the circle container
     const circleContainer = document.createElement("div");
     circleContainer.className = "circle-container";
-
-    // Create 12 circles and append them to the circle container
     for (let i = 0; i < 12; i++) {
       const circle = document.createElement("div");
       circle.className = `circle c${num}`;
       circleContainer.appendChild(circle);
     }
-
-    // Append circle container to main container
     letterContainer.appendChild(circleContainer);
-
     const lettersDiv = document.getElementById("letters");
     lettersDiv.appendChild(letterContainer);
   }
@@ -80,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
   for (let i = 1; i <= letters.length; i++) {
     createLetterElement(letters[i - 1], i);
   }
-  function setAnimationDelays(startDelay, k) {
+  function setDropsDelays(startDelay, k) {
     const drops = document.querySelectorAll(".drop");
     let delay = startDelay;
 
@@ -99,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   setLetterBgDelays(5, 14);
-  setAnimationDelays(1, 0.3);
+  setDropsDelays(1, 0.3);
   function repeatAnimation() {
     var container = document.getElementById("main");
 
