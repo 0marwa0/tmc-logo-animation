@@ -103,11 +103,14 @@ document.addEventListener("DOMContentLoaded", function () {
   function repeatAnimation() {
     var container = document.getElementById("main");
 
-    var clone = container.cloneNode(true);
+    if (container) {
+      var parent = container.parentNode;
 
-    document.body.removeChild(container);
+      var clone = container.cloneNode(true);
 
-    document.body.appendChild(clone);
+      parent.removeChild(container);
+      parent.appendChild(clone);
+    }
   }
 
   setInterval(repeatAnimation, 13000);

@@ -7,7 +7,7 @@
   grid-template-rows: 3fr 1fr;
   height: 500px;
   margin: 0;
-  border: 2px solid transparent;
+
   font-family: "Courier New";
   font-weight: 300;
   width: 100%;
@@ -47,21 +47,12 @@
 
 .item-container {
   display: flex;
-  /* height: 100px;
-  position: absolute;
 
-  justify-content: center;*/
-  /*   width: 100%; */
   align-items: center;
-  /* width: 100%; */
-  margin: 0 30px;
-
-  /* background-color: #4b24e8; */
-  /* border: 2px solid red; */
+  /* margin: 0 30px; */
+  margin-inline: auto;
 }
-/* .m-t {
-  margin-top: -400px;
-} */
+
 .drop {
   width: 40px;
   height: 40px;
@@ -733,7 +724,7 @@ div.slide-left {
   @keyframes text-grow {
     0% {
       font-size: 50px;
-      opacity: 1;
+      opacity: 0;
       /*       width:60px; */
     }
     10% {
@@ -1002,16 +993,18 @@ div.slide-left {
 
     margin-top: -130px;
   }
-
+  .item-container {
+    margin: 0 30px;
+  }
   /* .m-t {
     margin-top: -50px;
   } */
 }
 @media screen and (max-width: 290px) {
   #main {
-    transform: scale(0.5);
-    transition: all 0.5s ease-in;
-    margin-top: -130px;
+    transform: scale(0.4);
+    transition: all 0.4s ease-in;
+    margin-top: -155px;
   }
   /* .m-t {
     margin-top: -20px;
